@@ -1,173 +1,316 @@
-<?php include 'includes/header.php'; ?>
+<?php 
+include 'includes/header.php'; 
+include 'products_data.php';
+?>
 
-<!-- Hero Section -->
-<header class="relative h-[80vh] flex items-center overflow-hidden">
-    <!-- Background Image placeholder or Hero -->
-    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('koenchips_hero_1776518039191.png'); background-attachment: fixed;">
-        <div class="absolute inset-0 bg-black/40"></div>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+<!-- Section 1: Hero Parallax -->
+<section class="relative h-[100vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-darkGreen/75 z-10"></div>
+        <img src="https://picsum.photos/id/493/1920/1080" alt="Sukun Background" class="w-full h-full object-cover transform scale-110 parallax">
     </div>
     
-    <div class="container relative z-10 text-white">
-        <div class="max-w-2xl" id="hero-content">
-            <h1 class="text-5xl md:text-7xl playfair mb-4 leading-tight">Rasakan Kerenyahan <span class="text-gold italic">Sukun</span> yang Sesungguhnya</h1>
-            <p class="text-lg md:text-xl mb-8 opacity-90 font-light">KOENCHIPS menghadirkan camilan sehat bergizi dengan rasa tradisional yang dikemas modern untuk menemani hari-harimu.</p>
-            <div class="flex space-x-4">
-                <a href="katalog.php" class="bg-gold hover:bg-white text-darkGreen px-8 py-3 rounded-full font-bold transition-all no-underline shadow-lg">Lihat Produk</a>
-                <a href="tentang.php" class="border-2 border-white hover:bg-white hover:text-darkGreen px-8 py-3 rounded-full font-bold transition-all no-underline">Kenali Kami</a>
+    <div class="container relative z-20 text-center text-white">
+        <div class="max-w-4xl mx-auto reveal">
+            <h1 class="text-6xl md:text-8xl playfair font-bold mb-4">Bukan Sekadar Keripik</h1>
+            <h2 class="text-2xl md:text-4xl playfair italic text-gold mb-8">Pangan Lokal, Rasa Premium</h2>
+            <p class="text-lg md:text-xl mb-12 opacity-90 font-light max-w-2xl mx-auto leading-relaxed">
+                Menghadirkan kelezatan buah sukun pilihan yang diproses dengan teknologi modern untuk kerenyahan maksimal di setiap kepingnya.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="katalog.php" class="bg-gold text-deepGreen px-10 py-4 rounded-full font-bold no-underline hover:bg-white transition-all shadow-xl uppercase tracking-widest">
+                    Lihat Katalog
+                </a>
+                <a href="https://wa.me/6282265588823" class="border-2 border-white text-white px-10 py-4 rounded-full font-bold no-underline hover:bg-white hover:text-darkGreen transition-all uppercase tracking-widest">
+                    Chat WhatsApp
+                </a>
             </div>
         </div>
     </div>
-</header>
+</section>
 
-<!-- Featured Categories -->
+<!-- Section 2: Icon Stat Cards -->
+<section class="py-12 bg-white shadow-sm relative z-30">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-lg-3">
+                <div class="p-4">
+                    <div class="text-4xl mb-2">🌿</div>
+                    <h3 class="text-3xl font-bold text-darkGreen mb-0" data-count="98">0</h3>
+                    <p class="text-gray-500 uppercase text-xs font-bold tracking-widest mt-2">Rendah Lemak (%)</p>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="p-4">
+                    <div class="text-4xl mb-2">🏠</div>
+                    <h3 class="text-3xl font-bold text-darkGreen mb-0" data-count="100">0</h3>
+                    <p class="text-gray-500 uppercase text-xs font-bold tracking-widest mt-2">Pangan Lokal (%)</p>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="p-4">
+                    <div class="text-4xl mb-2">✨</div>
+                    <h3 class="text-3xl font-bold text-darkGreen mb-0" data-count="15">0</h3>
+                    <p class="text-gray-500 uppercase text-xs font-bold tracking-widest mt-2">Varian Rasa</p>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="p-4">
+                    <div class="text-4xl mb-2">⭐</div>
+                    <h3 class="text-3xl font-bold text-darkGreen mb-0">4.8</h3>
+                    <p class="text-gray-500 uppercase text-xs font-bold tracking-widest mt-2">Rating Pelanggan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3: Kenapa Sukun? -->
 <section class="section-padding bg-cream">
     <div class="container">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl playfair mb-2">Pilihan Unggulan</h2>
-            <div class="w-24 h-1 bg-gold mx-auto mb-4"></div>
-            <p class="text-gray-600">Varian rasa yang dipilih khusus untuk lidah Anda.</p>
+            <h2 class="playfair text-4xl md:text-5xl mb-4">Kenapa Memilih Sukun?</h2>
+            <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+            <p class="text-gray-600 italic">"Buah ajaib dari tropis dengan segudang manfaat."</p>
         </div>
         
         <div class="row g-4">
-            <!-- Original -->
-            <div class="col-md-4">
-                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-b-4 border-army group">
-                    <div class="h-64 bg-gray-100 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1628102420294-91c8274d7285?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Original" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <h3 class="playfair text-2xl mb-2">Original Sea Salt</h3>
-                    <p class="text-gray-600 mb-4">Kemurnian rasa sukun dengan sentuhan garam laut pilihan.</p>
-                    <a href="katalog.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
+            <div class="col-md-3">
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center h-full hover:-translate-y-2 transition-transform border-b-4 border-gold">
+                    <div class="text-4xl mb-4 text-gold">🥗</div>
+                    <h4 class="font-bold mb-3">Kaya Serat Alami</h4>
+                    <p class="text-sm text-gray-600">Membantu pencernaan tetap lancar dan sehat setiap hari.</p>
                 </div>
             </div>
-            <!-- Pedas -->
-            <div class="col-md-4">
-                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-b-4 border-army group">
-                    <div class="h-64 bg-gray-100 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1599490659223-e1539e769269?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pedas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <h3 class="playfair text-2xl mb-2">Pedas Daun Jeruk</h3>
-                    <p class="text-gray-600 mb-4">Sensasi pedas yang berpadu dengan aroma segar daun jeruk.</p>
-                    <a href="katalog.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
+            <div class="col-md-3">
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center h-full hover:-translate-y-2 transition-transform border-b-4 border-army">
+                    <div class="text-4xl mb-4 text-army">⚡</div>
+                    <h4 class="font-bold mb-3">Energi Lebih Stabil</h4>
+                    <p class="text-sm text-gray-600">Karbohidrat kompleks yang memberikan energi tahan lama.</p>
                 </div>
             </div>
-            <!-- Manis -->
-            <div class="col-md-4">
-                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-b-4 border-army group">
-                    <div class="h-64 bg-gray-100 rounded-xl mb-4 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1623934199716-dc3899651bb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Manis" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <h3 class="playfair text-2xl mb-2">Caramel Glaze</h3>
-                    <p class="text-gray-600 mb-4">Balutan karamel manis yang melapisi tiap kepingan renyah.</p>
-                    <a href="katalog.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
+            <div class="col-md-3">
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center h-full hover:-translate-y-2 transition-transform border-b-4 border-gold">
+                    <div class="text-4xl mb-4 text-gold">⚖️</div>
+                    <h4 class="font-bold mb-3">Lebih Seimbang</h4>
+                    <p class="text-sm text-gray-600">Indeks glikemik rendah, cocok sebagai camilan harian.</p>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="bg-white p-8 rounded-3xl shadow-sm text-center h-full hover:-translate-y-2 transition-transform border-b-4 border-army">
+                    <div class="text-4xl mb-4 text-army">🤝</div>
+                    <h4 class="font-bold mb-3">Memberdayakan Lokal</h4>
+                    <p class="text-sm text-gray-600">Mendukung petani sukun lokal Sidoarjo dan sekitarnya.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <p class="text-gray-400 text-xs uppercase tracking-widest font-bold">KOENCHIPS bukan produk kesehatan atau medis</p>
         </div>
     </div>
 </section>
 
-<!-- About Teaser -->
-<section class="bg-army text-white section-padding overflow-hidden">
+<!-- Section 4: Best Seller -->
+<section class="section-padding bg-white">
     <div class="container">
-        <div class="row items-center">
-            <div class="col-lg-6 mb-8 lg:mb-0">
-                <div class="relative">
-                    <div class="absolute -top-10 -left-10 w-40 h-40 border-8 border-gold/20 rounded-full"></div>
-                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="About" class="rounded-3xl shadow-2xl relative z-10 w-full">
-                    <div class="absolute -bottom-6 -right-6 bg-gold p-6 rounded-2xl z-20 text-darkGreen">
-                        <h4 class="text-4xl font-bold mb-0">100%</h4>
-                        <p class="mb-0 text-sm font-semibold uppercase tracking-wider">Bahan Alami</p>
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="playfair text-4xl mb-2">Produk Best Seller</h2>
+                <p class="text-gray-500 mb-0">Cita rasa yang paling dicintai Sobat Koen.</p>
+            </div>
+            <a href="katalog.php" class="text-darkGreen font-bold no-underline group">Lihat Semua <span class="group-hover:ml-2 transition-all">→</span></a>
+        </div>
+        
+        <div class="row g-4">
+            <?php for($i=0; $i<4; $i++): $p = $products[$i]; ?>
+            <div class="col-md-3">
+                <div class="card border-0 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="<?php echo $p['image']; ?>" class="card-img-top h-60 object-cover" alt="<?php echo $p['name']; ?>">
+                    <div class="card-body p-6">
+                        <h5 class="playfair font-bold text-xl mb-1"><?php echo $p['name']; ?></h5>
+                        <p class="text-gold font-bold mb-4">Rp 12.000 <span class="text-gray-400 text-xs font-normal">/ 100g</span></p>
+                        <a href="produk-detail.php?id=<?php echo $p['id']; ?>" class="btn-koen w-full text-sm py-2 rounded-xl no-underline inline-block text-center uppercase font-bold">Detail</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 lg:ps-12">
-                <span class="text-gold uppercase tracking-[0.2em] font-bold text-sm mb-4 block">Cerita Kami</span>
-                <h2 class="text-4xl md:text-5xl playfair mb-6">Warisan Rasa dari <br>Tanah Nusantara</h2>
-                <p class="text-lg opacity-80 mb-6 font-light">KOENCHIPS lahir dari kecintaan kami terhadap buah sukun lokal. Kami berkomitmen untuk memberikan nilai tambah pada komoditas lokal dengan teknik penggorengan modern yang menjaga kualitas nutrisi dan kerenyahan maksimal.</p>
-                <div class="space-y-4 mb-8">
-                    <div class="flex items-center space-x-3">
-                        <span class="text-gold text-xl">✔</span>
-                        <p class="mb-0">Dipilih dari sukun pilihan petani lokal</p>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="text-gold text-xl">✔</span>
-                        <p class="mb-0">Tanpa bahan pengawet tambahan</p>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="text-gold text-xl">✔</span>
-                        <p class="mb-0">Halal & Higienis</p>
-                    </div>
-                </div>
-                <a href="tentang.php" class="btn-koen inline-block px-10 py-3 rounded-full no-underline uppercase tracking-wider font-bold text-sm">Baca Selengkapnya</a>
+            <?php endfor; ?>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Proses Produksi -->
+<section class="section-padding bg-darkGreen text-white">
+    <div class="container">
+        <div class="text-center mb-16">
+            <h2 class="playfair text-4xl mb-4">Proses Pembuatan</h2>
+            <p class="opacity-70">Standar kualitas tinggi di setiap tahap produksi.</p>
+        </div>
+        
+        <div class="row g-0 relative">
+            <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-gold/30 -translate-y-1/2 hidden lg:block"></div>
+            
+            <div class="col-lg-3 col-md-6 mb-8 lg:mb-0 px-4 text-center relative z-10">
+                <div class="w-16 h-16 bg-gold text-darkGreen rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6 shadow-lg">1</div>
+                <h5 class="font-bold mb-3">Seleksi Sukun</h5>
+                <p class="text-sm opacity-70">Memilih buah sukun tua kualitas grade-A dari petani.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-8 lg:mb-0 px-4 text-center relative z-10">
+                <div class="w-16 h-16 bg-gold text-darkGreen rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6 shadow-lg">2</div>
+                <h5 class="font-bold mb-3">Iris Presisi</h5>
+                <p class="text-sm opacity-70">Pemotongan dengan ketebalan standar untuk hasil renyah.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-8 lg:mb-0 px-4 text-center relative z-10">
+                <div class="w-16 h-16 bg-gold text-darkGreen rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6 shadow-lg">3</div>
+                <h5 class="font-bold mb-3">Proses Minim Minyak</h5>
+                <p class="text-sm opacity-70">Teknik penggorengan hampa untuk hasil sehat & lezat.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-8 lg:mb-0 px-4 text-center relative z-10">
+                <div class="w-16 h-16 bg-gold text-darkGreen rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-6 shadow-lg">4</div>
+                <h5 class="font-bold mb-3">Packaging Premium</h5>
+                <p class="text-sm opacity-70">Kemasan kedap udara untuk menjaga kualitas rasa.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials -->
-<section class="section-padding">
-    <div class="container text-center">
-        <h2 class="text-4xl playfair mb-12">Apa Kata Penggemar Koen?</h2>
-        <div class="row g-4 text-start">
-            <div class="col-md-4">
-                <div class="glass p-8 rounded-3xl border-2 border-army/10 h-full">
-                    <div class="flex text-gold mb-4 text-xl">★★★★★</div>
-                    <p class="italic text-gray-700 mb-6">"Kerenyahannya luar biasa! Biasanya keripik sukun itu keras, tapi KOENCHIPS ini beneran keriuk tapi empuk. Anak-anak suka banget varian Original nya."</p>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-army rounded-full overflow-hidden">
-                            <img src="https://i.pravatar.cc/150?u=1" alt="user">
+<!-- Section 6: Testimoni Slider -->
+<section class="section-padding bg-cream overflow-hidden">
+    <div class="container">
+        <div class="text-center mb-16">
+            <h2 class="playfair text-4xl mb-4">Apa Kata Mereka?</h2>
+            <div class="text-gold text-2xl">★★★★★</div>
+        </div>
+        
+        <div class="swiper testimonialSwiper pb-12">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide px-4">
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm text-center">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                            <img src="https://i.pravatar.cc/150?u=1" class="w-full h-full object-cover">
                         </div>
-                        <div>
-                            <h6 class="mb-0 font-bold">Saras Wijaya</h6>
-                            <small class="text-gray-500">Ibu Rumah Tangga</small>
+                        <p class="italic text-gray-700 mb-6">"Rasanya benar-benar beda dari keripik sukun yang ada di pasar. Packagingnya juga mewah banget, cocok buat oleh-oleh."</p>
+                        <h6 class="font-bold mb-0">Riza Pratama</h6>
+                        <small class="text-gold font-bold">Sobat Koen</small>
+                    </div>
+                </div>
+                <div class="swiper-slide px-4">
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm text-center">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                            <img src="https://i.pravatar.cc/150?u=2" class="w-full h-full object-cover">
                         </div>
+                        <p class="italic text-gray-700 mb-6">"Camilan favorit keluarga! Yang Caramel Glaze juara banget manisnya pas."</p>
+                        <h6 class="font-bold mb-0">Indah Permata</h6>
+                        <small class="text-gold font-bold">Sobat Koen</small>
+                    </div>
+                </div>
+                <div class="swiper-slide px-4">
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm text-center">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                            <img src="https://i.pravatar.cc/150?u=3" class="w-full h-full object-cover">
+                        </div>
+                        <p class="italic text-gray-700 mb-6">"Salut sama KOENCHIPS, bantu petani lokal berkembang. Rasanya juga premium, kualitas ekspor!"</p>
+                        <h6 class="font-bold mb-0">Andi Budiman</h6>
+                        <small class="text-gold font-bold">Sobat Koen</small>
+                    </div>
+                </div>
+                <div class="swiper-slide px-4">
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm text-center">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                            <img src="https://i.pravatar.cc/150?u=4" class="w-full h-full object-cover">
+                        </div>
+                        <p class="italic text-gray-700 mb-6">"Pengiriman cepat dan bubble wrap super tebal. Keripik nggak hancur sama sekali."</p>
+                        <h6 class="font-bold mb-0">Siska Amalia</h6>
+                        <small class="text-gold font-bold">Sobat Koen</small>
+                    </div>
+                </div>
+                <div class="swiper-slide px-4">
+                    <div class="bg-white p-8 rounded-[3rem] shadow-sm text-center">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                            <img src="https://i.pravatar.cc/150?u=5" class="w-full h-full object-cover">
+                        </div>
+                        <p class="italic text-gray-700 mb-6">"Wajib coba varian Pedas Daun Jeruknya, seger banget baunya dan nagih bumbunya!"</p>
+                        <h6 class="font-bold mb-0">Doni Setiawan</h6>
+                        <small class="text-gold font-bold">Sobat Koen</small>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="glass p-8 rounded-3xl border-2 border-army/10 h-full">
-                    <div class="flex text-gold mb-4 text-xl">★★★★★</div>
-                    <p class="italic text-gray-700 mb-6">"Packagingnya mewah banget, cocok buat oleh-oleh atau hampers. Rasanya nggak kaleng-kaleng, bumbunya meresap sampai ke dalam."</p>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-army rounded-full overflow-hidden">
-                            <img src="https://i.pravatar.cc/150?u=2" alt="user">
-                        </div>
-                        <div>
-                            <h6 class="mb-0 font-bold">Andra Rahman</h6>
-                            <small class="text-gray-500">Food Blogger</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="glass p-8 rounded-3xl border-2 border-army/10 h-full">
-                    <div class="flex text-gold mb-4 text-xl">★★★★★</div>
-                    <p class="italic text-gray-700 mb-6">"Suka banget sama yang Pedas Daun Jeruk. Fresh banget aromanya. Pengiriman juga cepet dan bubble wrapnya tebel, jadi keripiknya nggak hancur."</p>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-army rounded-full overflow-hidden">
-                            <img src="https://i.pravatar.cc/150?u=3" alt="user">
-                        </div>
-                        <div>
-                            <h6 class="mb-0 font-bold">Budi Santoso</h6>
-                            <small class="text-gray-500">Karyawan Swasta</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="container mb-24">
-    <div class="bg-darkGreen rounded-[3rem] p-12 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gold/5 blur-3xl rounded-full scale-150"></div>
-        <div class="relative z-10 w-full max-w-3xl mx-auto">
-            <h2 class="text-white playfair text-4xl md:text-5xl mb-6">Siap Menanamkan Kerenyahan di Harimu?</h2>
-            <p class="text-cream/80 text-lg mb-10">Dapatkan diskon 15% untuk pembelian pertama Anda melalui website. Klik tombol di bawah ini!</p>
-            <a href="kontak.php" class="bg-gold text-darkGreen px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all no-underline inline-block">Order via WhatsApp</a>
+<!-- Section 7: CTA Banner -->
+<section class="section-padding container">
+    <div class="bg-darkGreen rounded-[4rem] p-16 text-center text-white relative overflow-hidden" style="background-image: radial-gradient(#d4a843 1px, transparent 1px); background-size: 30px 30px; background-color: #3d4e22;">
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 class="playfair text-5xl mb-6">Pesan Sekarang & Rasakan <br>Kerenyahannya</h2>
+            <p class="text-lg opacity-80 mb-10 leading-relaxed">Nikmati promo gratis ongkir untuk wilayah Sidoarjo dan sekitarnya. Stok terbatas setiap harinya!</p>
+            <a href="order.php" class="bg-gold text-darkGreen px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all no-underline inline-block uppercase tracking-widest shadow-2xl">
+                Beli Online
+            </a>
         </div>
     </div>
 </section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Stat Counter Animation
+    const counters = document.querySelectorAll('[data-count]');
+    const speed = 200;
+
+    const runCount = () => {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(runCount, 15);
+            } else {
+                counter.innerText = target;
+            }
+        });
+    };
+
+    // Trigger counter when in view
+    const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) {
+            runCount();
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+    
+    if(counters.length > 0) observer.observe(counters[0]);
+
+    // Swiper Initializer
+    new Swiper('.testimonialSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+        autoplay: {
+            delay: 4000,
+        },
+    });
+});
+</script>
 
 <?php include 'includes/footer.php'; ?>
