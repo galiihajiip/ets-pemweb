@@ -1,59 +1,64 @@
-// Cart Count Update
+/**
+ * KOENCHIPS - Global JavaScript
+ * Features: Cart Logic, Global Observers, Preloader
+ */
+
+// [1] - Cart Management System
 function updateCartCount() {
-    const countEl = document.getElementById('cart-count');
-    if (countEl) {
-        let cart = JSON.parse(localStorage.getItem('koenchips_cart')) || [];
-        countEl.innerText = cart.length;
+    const el = document.getElementById('cart-count');
+    if (el) {
+        const cart = JSON.parse(localStorage.getItem('koenchips_cart')) || [];
+        el.innerText = cart.length;
     }
 }
 
-// Initial count and listener
-document.addEventListener('DOMContentLoaded', () => {
+function addToCart(productName) {
+    const cart = JSON.parse(localStorage.getItem('koenchips_cart')) || [];
+    cart.push(productName);
+    localStorage.setItem('koenchips_cart', JSON.stringify(cart));
+    
+    // Refresh navbar counter
     updateCartCount();
     
-    window.addEventListener('cartUpdated', () => {
-        updateCartCount();
-    });
-    
-    // Initial animations...
-    // Initial animations
-    const heroContent = document.querySelector('#hero-content');
-    if (heroContent) {
-        heroContent.style.opacity = '0';
-        heroContent.style.transform = 'translateY(30px)';
-        setTimeout(() => {
-            heroContent.style.transition = 'all 1s ease-out';
-            heroContent.style.opacity = '1';
-            heroContent.style.transform = 'translateY(0)';
-        }, 300);
+    // Success Toast (using SweetAlert2 if available)
+    if (typeof Swal !== 'undefined') {
+        Swal.fire({
+            title: 'Berhasil!',
+            text: productName + ' telah ditambahkan ke keranjang.',
+            icon: 'success',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+    } else {
+        alert(productName + " ditambahkan ke keranjang!");
     }
+}
 
-    // Scroll reveal logic
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
+// [2] - Initialize Page Elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial Cart Refresh
+    updateCartCount();
 
-    const observer = new IntersectionObserver((entries) => {
+    // Intersection Observer for Reveal Animations (Fallback for AOS)
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-active');
             }
         });
-    }, observerOptions);
-
-    // Apply reveal to sections
-    document.querySelectorAll('section, header, .row > div').forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+    
+    // Parallax Effect for Hero
+    window.addEventListener('scroll', () => {
+        const p = document.querySelector('.parallax');
+        if (p) {
+            let offset = window.pageYOffset;
+            p.style.transform = `translateY(${offset * 0.4}px) scale(1.1)`;
+        }
     });
 });
-
-// Utility: Form validasi sederhana
-function validateForm(formId) {
-    const form = document.getElementById(formId);
-    if (!form) return true;
-    
-    // logic here
-    return true;
-}
