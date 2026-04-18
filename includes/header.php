@@ -96,7 +96,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <a class="nav-link text-white/90 hover:text-gold transition-all px-3 <?php echo ($current_page == 'kontak.php') ? 'active' : ''; ?>" href="kontak.php">Kontak</a>
                     </li>
                 </ul>
-                <div class="ms-xl-4 mt-3 mt-xl-0">
+                <div class="ms-xl-4 mt-3 mt-xl-0 flex items-center space-x-4">
+                    <!-- Cart Counter -->
+                    <div class="relative cursor-pointer group">
+                        <span class="text-white text-xl">🛒</span>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-gold text-deepGreen text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-darkGreen">0</span>
+                    </div>
                     <a href="order.php" class="bg-gold text-deepGreen px-6 py-2.5 rounded-full font-bold hover:bg-white hover:scale-105 transition-all no-underline inline-block uppercase text-xs tracking-widest shadow-lg">
                         Order Sekarang
                     </a>

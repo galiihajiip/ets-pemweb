@@ -1,5 +1,21 @@
-// DOM Content Loaded
+// Cart Count Update
+function updateCartCount() {
+    const countEl = document.getElementById('cart-count');
+    if (countEl) {
+        let cart = JSON.parse(localStorage.getItem('koenchips_cart')) || [];
+        countEl.innerText = cart.length;
+    }
+}
+
+// Initial count and listener
 document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+    
+    window.addEventListener('cartUpdated', () => {
+        updateCartCount();
+    });
+    
+    // Initial animations...
     // Initial animations
     const heroContent = document.querySelector('#hero-content');
     if (heroContent) {
