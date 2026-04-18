@@ -1,28 +1,22 @@
 <?php
-// Database Configuration
-$db_host = "localhost";
-$db_user = "root";
-$db_pass = "";
+// BLOK 5.0 - Database Configuration with PDO
+$host = "localhost";
 $db_name = "koenchips_db";
+$username = "root";
+$password = "";
 
-// Connect to MySQL
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-// Check connection (comment out in production)
-/*
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
+    // Set PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    // Silence error for now if DB doesn't exist yet, to allow UI preview
+    $pdo = null;
+    $db_error = $e->getMessage();
 }
-*/
 
 // Brand Settings
 $site_name = "KOENCHIPS";
 $tagline = "The Authentic Breadfruit Ripple";
-
-// Color Palette
-$primary_green = "#4a5c2a";
-$secondary_green = "#3d4e22";
-$light_green = "#5a7032";
-$accent_gold = "#d4a843";
-$cream_bg = "#f5e6c8";
 ?>
