@@ -37,10 +37,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $wa_message = "Halo Admin KOENCHIPS, saya mau pesan!\n\nNama: $name\nProduk: $products_str\nAlamat: $address, $city\nCatatan: $note\n\nTotal: Rp " . number_format($total_price, 0, ',', '.');
             $wa_url = "https://wa.me/6282265588823?text=" . urlencode($wa_message);
             
+            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
             echo "<script>
-                alert('Pesanan Berhasil Disimpan!');
-                window.open('$wa_url', '_blank');
-                window.location.href = 'order.php?success=1';
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        title: 'Pesanan Berhasil!',
+                        text: 'Terima kasih $name, data Anda telah tersimpan. Klik OK untuk lanjut ke WhatsApp Admin.',
+                        icon: 'success',
+                        confirmButtonColor: '#d4a843',
+                        confirmButtonText: 'OKE, LANJUT!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.open('$wa_url', '_blank');
+                            window.location.href = 'order.php?success=1';
+                        }
+                    });
+                });
             </script>";
             exit();
         } catch (PDOException $e) {
