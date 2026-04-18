@@ -1,39 +1,45 @@
-<?php include 'includes/header.php'; ?>
+<?php 
+/**
+ * KOENCHIPS - Tentang Kami
+ * Features BLOK 6.0: Mission/Vision, Timeline, Gallery, Animated Stats
+ */
+include 'includes/header.php'; 
+?>
 
-<!-- Section 1: Hero -->
+<!-- Hero -->
 <section class="bg-army py-24 text-white text-center">
     <div class="container overflow-hidden">
-        <span class="text-gold uppercase tracking-[0.4em] font-bold text-sm mb-4 block reveal">The Story of Koen</span>
-        <h1 class="text-6xl md:text-8xl playfair mb-6 reveal">Naik Kelas Bersama <span class="text-gold italic">Sukun</span></h1>
-        <p class="text-xl opacity-80 max-w-2xl mx-auto italic reveal">"Memberdayakan kekayaan lokal untuk kebahagiaan global."</p>
+        <span class="text-gold uppercase tracking-[0.5em] font-black text-[10px] mb-4 block" data-aos="fade-down">The Heritage</span>
+        <h1 class="text-6xl md:text-8xl playfair mb-6" data-aos="fade-up">Filosofi <span class="text-gold">KOEN</span></h1>
+        <p class="text-xl opacity-75 max-w-2xl mx-auto italic" data-aos="fade-up" data-aos-delay="200">"Sukun sebagai simbol ketahanan dan kehangatan nusantara."</p>
     </div>
 </section>
 
-<!-- Section 2: Misi Visi -->
+<!-- Misi Visi -->
 <section class="section-padding bg-cream">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6 reveal">
-                <div class="bg-darkGreen text-white p-12 rounded-[3.5rem] shadow-xl h-full">
-                    <h2 class="playfair text-4xl mb-6 text-gold">Visi Kami</h2>
-                    <p class="text-lg opacity-80 leading-relaxed">Menjadi brand camilan sukun nomor satu di dunia yang menginspirasi gaya hidup sehat dan memberdayakan ekonomi krearif masyarakat lokal Indonesia melalui inovasi pangan berkelanjutan.</p>
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="bg-darkGreen text-white p-12 rounded-[4rem] shadow-xl h-full border-b-[12px] border-gold">
+                    <h2 class="playfair text-4xl mb-8 text-gold">Visi Utama</h2>
+                    <p class="text-lg opacity-80 leading-relaxed font-light">Menjadi pionir camilan sehat berbasis kearifan lokal yang mendunia, memberikan standar baru pada kualitas kripik sukun, serta menginspirasi gaya hidup positif di setiap lapisan masyarakat Indonesia.</p>
                 </div>
             </div>
-            <div class="col-lg-6 reveal">
-                <div class="bg-white p-12 rounded-[3.5rem] shadow-xl h-full border border-gray-100">
-                    <h2 class="playfair text-4xl mb-6 text-army">Misi Kami</h2>
-                    <ul class="space-y-4 text-gray-600">
-                        <li class="flex items-start space-x-3">
-                            <span class="text-gold">✔</span>
-                            <span>Menjaga standar kualitas tertinggi dalam setiap proses produksi.</span>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                <div class="bg-white p-12 rounded-[4rem] shadow-xl h-full border border-gray-100">
+                    <h2 class="playfair text-4xl mb-8 text-army">Misi Kami</h2>
+                    <ul class="space-y-6 text-gray-500 font-medium">
+                        <li class="flex items-start space-x-4">
+                            <span class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center text-gold"> <i class="bi bi-patch-check-fill"></i> </span>
+                            <span>Menjaga keaslian rasa sukun dengan teknik pengolahan terbaik.</span>
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-gold">✔</span>
-                            <span>Terus berinovasi dengan varian rasa yang sesuai lidah modern.</span>
+                        <li class="flex items-start space-x-4">
+                            <span class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center text-gold"> <i class="bi bi-patch-check-fill"></i> </span>
+                            <span>Meningkatkan nilai ekonomi buah sukun bagi petani lokal.</span>
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-gold">✔</span>
-                            <span>Menjaga kesejahteraan petani mitra kami di daerah Sidoarjo.</span>
+                        <li class="flex items-start space-x-4">
+                            <span class="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center text-gold"> <i class="bi bi-patch-check-fill"></i> </span>
+                            <span>Memberikan kebahagiaan melalui kerenyahan yang sehat & halal.</span>
                         </li>
                     </ul>
                 </div>
@@ -42,68 +48,42 @@
     </div>
 </section>
 
-<!-- Section 3: Timeline -->
-<section class="section-padding bg-white">
-    <div class="container">
-        <h2 class="playfair text-4xl text-center mb-16">Perjalanan KOENCHIPS</h2>
-        <div class="relative max-w-4xl mx-auto border-l-2 border-gold/30 pl-10 space-y-12">
-            <div class="relative reveal">
-                <div class="absolute -left-[51px] top-0 w-5 h-5 bg-gold rounded-full ring-8 ring-gold/10"></div>
-                <h4 class="font-bold text-xl text-army mb-2">2022 - Awal Mula</h4>
-                <p class="text-gray-500">Dimulai dari garasi kecil di rumah Sidoarjo, bereksperimen dengan resep tradisional sukun.</p>
-            </div>
-            <div class="relative reveal">
-                <div class="absolute -left-[51px] top-0 w-5 h-5 bg-gold rounded-full ring-8 ring-gold/10"></div>
-                <h4 class="font-bold text-xl text-army mb-2">2023 - Ekspansi Produksi</h4>
-                <p class="text-gray-500">Membuka batch produksi pertama untuk dijual secara online melalui marketplace.</p>
-            </div>
-            <div class="relative reveal">
-                <div class="absolute -left-[51px] top-0 w-5 h-5 bg-gold rounded-full ring-8 ring-gold/10"></div>
-                <h4 class="font-bold text-xl text-army mb-2">2024 - Inovasi Vacuum Frying</h4>
-                <p class="text-gray-500">Investasi pada teknologi penggorengan hampa untuk hasil yang lebih sehat dan renyah.</p>
-            </div>
-            <div class="relative reveal">
-                <div class="absolute -left-[51px] top-0 w-5 h-5 bg-gold rounded-full ring-8 ring-gold/10"></div>
-                <h4 class="font-bold text-xl text-army mb-2">2026 - Go Regional</h4>
-                <p class="text-gray-500">Target menjadi snack premium wajib di seluruh retail modern Indonesia.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section 4: Angka Capaian -->
+<!-- Stats Grid -->
 <section class="py-20 bg-darkGreen text-white text-center">
     <div class="container">
-        <div class="row g-6">
-            <div class="col-md-3">
+        <div class="row g-6 text-center">
+            <div class="col-md-3" data-aos="zoom-in">
                 <h3 class="text-5xl font-black text-gold mb-2" data-count="50000">0</h3>
-                <p class="uppercase tracking-widest text-xs font-bold opacity-70">Pelanggan Puas</p>
+                <p class="uppercase tracking-widest text-[10px] font-black opacity-50">Sobat Koen Puas</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
                 <h3 class="text-5xl font-black text-gold mb-2" data-count="300">0</h3>
-                <p class="uppercase tracking-widest text-xs font-bold opacity-70">Ulasan ⭐⭐⭐⭐⭐</p>
+                <p class="uppercase tracking-widest text-[10px] font-black opacity-50">Testimoni Bintang 5</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
                 <h3 class="text-5xl font-black text-gold mb-2">4.8</h3>
-                <p class="uppercase tracking-widest text-xs font-bold opacity-70">Rating Rata-rata</p>
+                <p class="uppercase tracking-widest text-[10px] font-black opacity-50">Rating Playstore</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
                 <h3 class="text-5xl font-black text-gold mb-2" data-count="4">0</h3>
-                <p class="uppercase tracking-widest text-xs font-bold opacity-70">Varian Rasa Utama</p>
+                <p class="uppercase tracking-widest text-[10px] font-black opacity-50">Varian Rasa Signature</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Section 5: Galeri Foto -->
-<section class="section-padding bg-cream">
+<!-- Gallery Section -->
+<section class="section-padding bg-white">
     <div class="container">
-        <h2 class="playfair text-4xl text-center mb-16">Galeri Kebahagiaan</h2>
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="playfair text-5xl mb-4">Momen Kebahagiaan</h2>
+            <p class="text-gray-400">KOENCHIPS di setiap tawa Anda.</p>
+        </div>
         <div class="row g-4">
             <?php for($i=1; $i<=12; $i++): ?>
-            <div class="col-6 col-md-4 col-lg-3 reveal">
-                <div class="h-64 rounded-3xl overflow-hidden shadow-sm hover:scale-105 transition-transform">
-                    <img src="https://picsum.photos/id/<?php echo 480+$i; ?>/800/800" class="w-full h-full object-cover">
+            <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="<?php echo ($i % 6)*50; ?>">
+                <div class="h-48 rounded-[2rem] overflow-hidden shadow-sm hover-scale">
+                    <img src="https://picsum.photos/400/300?random=<?php echo $i; ?>" class="w-full h-full object-cover">
                 </div>
             </div>
             <?php endfor; ?>
@@ -111,31 +91,28 @@
     </div>
 </section>
 
-<!-- Section 6: CTA -->
-<section class="py-24 bg-gold text-center overflow-hidden relative">
-    <div class="container relative z-10">
-        <h2 class="playfair text-4xl text-darkGreen mb-8">Jadilah Bagian dari Perjalanan Kami</h2>
-        <a href="https://wa.me/6282265588823" class="bg-darkGreen text-white px-12 py-4 rounded-full font-bold no-underline inline-block uppercase tracking-widest hover:bg-army transition-all">Hubungi WhatsApp Admin</a>
+<!-- CTA -->
+<section class="py-24 bg-gold text-center relative overflow-hidden">
+    <div class="container relative z-10" data-aos="fade-up">
+        <h2 class="playfair text-4xl text-darkGreen font-bold mb-8 uppercase tracking-wider">Jadilah Bagian dari Inovasi Kami</h2>
+        <a href="kontak.php" class="bg-darkGreen text-white px-12 py-5 rounded-full font-black no-underline inline-block uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">BICARA DENGAN KAMI VIA WA</a>
     </div>
 </section>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // Count up logic
-    const counters = document.querySelectorAll('[data-count]');
-    const runCount = () => {
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-count');
-            const count = +counter.innerText;
-            const inc = target / 50;
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(runCount, 30);
-            } else { counter.innerText = target + (target > 1000 ? '+' : ''); }
+    const stats = document.querySelectorAll('[data-count]');
+    const countUp = () => {
+        stats.forEach(s => {
+            const tar = +s.getAttribute('data-count');
+            const num = +s.innerText;
+            const inc = tar / 40;
+            if(num < tar) { s.innerText = Math.ceil(num + inc); setTimeout(countUp, 25); }
+            else { s.innerText = tar + (tar > 10 ? '+' : ''); }
         });
     };
-    const obs = new IntersectionObserver((es) => { if(es[0].isIntersecting) { runCount(); obs.disconnect(); } }, {threshold: 0.5});
-    if(counters.length) obs.observe(counters[0]);
+    const obsStat = new IntersectionObserver((es) => { if(es[0].isIntersecting) { countUp(); obsStat.disconnect(); } }, {threshold: 0.5});
+    if(stats.length) obsStat.observe(stats[0]);
 });
 </script>
 

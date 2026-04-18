@@ -1,137 +1,67 @@
-<?php include 'includes/header.php'; ?>
+<?php 
+/**
+ * KOENCHIPS - Tim Kami
+ * Features BLOK 6.0: Hover Flip Card Effects & Member Profiles
+ */
+include 'includes/header.php'; 
+?>
 
-<style>
-    .flip-card {
-        background-color: transparent;
-        width: 100%;
-        height: 500px;
-        perspective: 1000px;
-    }
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-    }
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-    .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 3rem;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    .flip-card-front {
-        background-color: #fff;
-    }
-    .flip-card-back {
-        background-color: #3d4e22;
-        color: white;
-        transform: rotateY(180deg);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem;
-    }
-</style>
-
+<!-- Header -->
 <section class="bg-army py-24 text-white text-center">
-    <div class="container">
-        <h1 class="text-5xl md:text-7xl playfair mb-6">Minds Behind <span class="text-gold">KOEN</span></h1>
-        <p class="text-xl opacity-80 max-w-2xl mx-auto">Kolaborasi mahasiswa kreatif untuk inovasi pangan Nusantara.</p>
+    <div class="container" data-aos="zoom-in">
+        <h1 class="text-5xl md:text-7xl playfair mb-4">Behind <span class="text-gold">The Leaf</span></h1>
+        <p class="text-xl opacity-75 max-w-2xl mx-auto italic">"Sekumpulan pemimpi yang percaya pada keajaiban pangan lokal."</p>
     </div>
 </section>
 
+<!-- Team Cards Grid -->
 <section class="section-padding bg-white">
     <div class="container">
         <div class="row g-5">
-            <!-- Team 1 -->
-            <div class="col-lg-3 col-md-6 reveal mt-0">
+            <?php 
+                $team = [
+                    ['name'=>'Angelita Aliyah Putri', 'role'=>'Business Lead', 'major'=>'Teknik Lingkungan', 'quote'=>'Mengintegrasikan keberlanjutan dalam setiap strategi bisnis KOENCHIPS.', 'img'=>'64', 'color'=>'#3d4e22'],
+                    ['name'=>'Muhammad Ananda Hariadi', 'role'=>'Product & Operations', 'major'=>'Informatika', 'quote'=>'Efisiensi sistem adalah kunci untuk menjaga kerenyahan tetap konsisten.', 'img'=>'65', 'color'=>'#4a5c2a'],
+                    ['name'=>'Galih Aji Pangestu', 'role'=>'Tech & Branding', 'major'=>'Informatika', 'quote'=>'Membangun jembatan digital antara petani lokal dan pecinta camilan premium.', 'img'=>'91', 'color'=>'#5a7032'],
+                    ['name'=>'Ananditha Frissila Utama', 'role'=>'Marketing Lead', 'major'=>'Teknik Lingkungan', 'quote'=>'Marketing bukan cuma jualan, tapi memberi edukasi tentang pangan sehat.', 'img'=>'177', 'color'=>'#2d3a1e'],
+                ];
+                foreach($team as $i => $m):
+            ?>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="<?php echo $i*100; ?>">
                 <div class="flip-card">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://picsum.photos/id/64/800/1000" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-start">
-                                <h3 class="playfair text-xl font-bold mb-0">Angelita Aliyah Putri</h3>
-                                <small class="text-gold uppercase tracking-tighter">Business Lead</small>
+                        <div class="flip-card-front shadow-xl border-8 border-cream">
+                            <img src="https://picsum.photos/id/<?php echo $m['img']; ?>/800/1000" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-white text-start">
+                                <h3 class="playfair text-xl font-bold mb-1"><?php echo $m['name']; ?></h3>
+                                <p class="text-[9px] font-black uppercase tracking-[0.3em] text-gold mb-0"><?php echo $m['role']; ?></p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                            <h3 class="playfair text-2xl font-bold mb-2">Business Lead</h3>
-                            <p class="text-xs uppercase tracking-widest text-gold mb-6">Teknik Lingkungan</p>
-                            <p class="italic opacity-80 mb-6 font-light">"Mengintegrasikan keberlanjutan dalam setiap strategi bisnis KOENCHIPS."</p>
+                        <div class="flip-card-back" style="background-color: <?php echo $m['color']; ?>;">
+                            <div class="text-gold text-3xl mb-6">“</div>
+                            <h4 class="playfair text-xl font-bold mb-2"><?php echo $m['role']; ?></h4>
+                            <p class="text-xs uppercase tracking-widest text-gold/60 mb-8 font-black"><?php echo $m['major']; ?></p>
+                            <p class="italic opacity-80 mb-0 font-light text-sm leading-relaxed">"<?php echo $m['quote']; ?>"</p>
+                            <div class="mt-10 flex space-x-3 text-gold">
+                                <i class="bi bi-linkedin"></i>
+                                <i class="bi bi-instagram"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Team 2 -->
-            <div class="col-lg-3 col-md-6 reveal mt-0">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://picsum.photos/id/65/800/1000" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-start">
-                                <h3 class="playfair text-xl font-bold mb-0">Muhammad Ananda H.</h3>
-                                <small class="text-gold uppercase tracking-tighter">Product & Operations</small>
-                            </div>
-                        </div>
-                        <div class="flip-card-back" style="background-color: #4a5c2a;">
-                            <h3 class="playfair text-2xl font-bold mb-2">Product & Ops</h3>
-                            <p class="text-xs uppercase tracking-widest text-gold mb-6">Informatika</p>
-                            <p class="italic opacity-80 mb-6 font-light">"Efisiensi sistem adalah kunci untuk menjaga kerenyahan tetap konsisten."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Team 3 -->
-            <div class="col-lg-3 col-md-6 reveal mt-0">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://picsum.photos/id/91/800/1000" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-start">
-                                <h3 class="playfair text-xl font-bold mb-0">Galih Aji Pangestu</h3>
-                                <small class="text-gold uppercase tracking-tighter">Tech & Branding</small>
-                            </div>
-                        </div>
-                        <div class="flip-card-back" style="background-color: #5a7032;">
-                            <h3 class="playfair text-2xl font-bold mb-2">Tech & Branding</h3>
-                            <p class="text-xs uppercase tracking-widest text-gold mb-6">Informatika</p>
-                            <p class="italic opacity-80 mb-6 font-light">"Membangun jembatan digital antara petani lokal dan pecinta camilan premium."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Team 4 -->
-            <div class="col-lg-3 col-md-6 reveal mt-0">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://picsum.photos/id/177/800/1000" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-start">
-                                <h3 class="playfair text-xl font-bold mb-0">Ananditha Frissila U.</h3>
-                                <small class="text-gold uppercase tracking-tighter">Marketing Lead</small>
-                            </div>
-                        </div>
-                        <div class="flip-card-back" style="background-color: #2d3a1e;">
-                            <h3 class="playfair text-2xl font-bold mb-2">Marketing Lead</h3>
-                            <p class="text-xs uppercase tracking-widest text-gold mb-6">Teknik Lingkungan</p>
-                            <p class="italic opacity-80 mb-6 font-light">"Marketing bukan cuma jualan, tapi memberi edukasi tentang pangan sehat."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
+    </div>
+</section>
+
+<!-- Team Footer -->
+<section class="py-20 bg-cream text-center">
+    <div class="container" data-aos="fade-up">
+        <h2 class="playfair text-3xl mb-4">Mari Berkolaborasi!</h2>
+        <p class="text-gray-500 mb-8 max-w-xl mx-auto">Kami selalu terbuka untuk ide-ide baru dan kemitraan kreatif. Jangan ragu untuk menyapa kami.</p>
+        <a href="kontak.php" class="text-darkGreen font-bold no-underline group">Kirim Pesan ke Tim Kami <span class="group-hover:ml-3 transition-all inline-block">&rarr;</span></a>
     </div>
 </section>
 
