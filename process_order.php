@@ -1,7 +1,6 @@
 <?php
 /**
- * KOENCHIPS - Order Processing Handler
- * Integrates BLOK 5.0 (Validation + PDO) & BLOK 9.0 (SweetAlert2 + WA Intent)
+ * KOENCHIPS - Order Processing Handler (LOCAL SYNC)
  */
 include 'config.php';
 
@@ -10,8 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['customer_name']);
     $wa = htmlspecialchars($_POST['whatsapp']);
     $addr = htmlspecialchars($_POST['address']);
-    $city = htmlspecialchars($_POST['city']);
-    $note = htmlspecialchars($_POST['note']);
+    $city = isset($_POST['city']) ? htmlspecialchars($_POST['city']) : 'Sidoarjo';
+    $note = isset($_POST['note']) ? htmlspecialchars($_POST['note']) : '';
     
     // Product Aggregation
     $selected = isset($_POST['products']) ? $_POST['products'] : [];
@@ -25,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $q = isset($qtys[$prod]) ? (int)$qtys[$prod] : 1;
         $summary_arr[] = "$prod ($q)";
         $total_qty += $q;
-        $total_price += ($q * 12000); // Fixed price per keping: 12.000
+        $total_price += ($q * 12000); 
     }
     
     $summary_str = implode(", ", $summary_arr);
@@ -38,28 +37,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$name, $wa, $addr, $city, $summary_str, $total_qty, $total_price, $note]);
             
-            // Build WhatsApp Message
-            $wa_msg = "Halo Admin KOENCHIPS! 👋\n\nSy mau pesan kripik sukun premium:\n\n🧑 *Nama:* $name\n📦 *Order:* $summary_str\n📍 *Alamat:* $addr, $city\n📝 *Catatan:* $note\n\n💰 *Total Bayar:* Rp " . number_format($total_price, 0, ',', '.');
+            $wa_msg = "Halo Admin KOENCHIPS! 👋\n\nSy mau pesan kripik sukun premium:\n\n🧑 *Nama:* $name\n📦 *Order:* $summary_str\n💰 *Total:* Rp " . number_format($total_price, 0, ',', '.');
             $wa_url = "https://wa.me/6282265588823?text=" . urlencode($wa_msg);
             
-            // Successful Logic Response (with SweetAlert2)
             echo "<!DOCTYPE html><html><head>";
             echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-            echo "<link rel='stylesheet' href='assets/css/style.css'>";
             echo "</head><body style='background-color:#faf6ee;'>";
             echo "<script>
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
-                        title: 'Pesanan Berhasil Disimpan!',
-                        text: 'Halo $name, pesananmu sudah masuk database. Klik OK untuk konfirmasi pembayaran via WhatsApp.',
+                        title: 'Pesanan Berhasil!',
+                        text: 'Halo $name, pesananmu sudah tersimpan.',
                         icon: 'success',
-                        confirmButtonColor: '#d4a843',
-                        confirmButtonText: 'KONFIRMASI VIA WA'
+                        confirmButtonText: 'OKE'
                     }).then((result) => {
-                        if (result.isConfirmed) {
-                            window.open('$wa_url', '_blank');
-                            window.location.href = 'order.php?success=1';
-                        }
+                        window.open('$wa_url', '_blank');
+                        window.location.href = 'order.php?success=1';
                     });
                 });
             </script>";
@@ -70,14 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("SQL Error: " . $e->getMessage());
         }
     } else {
-        // Fallback Simulation for UI testing without DB
-        $wa_msg = "Halo Admin KOENCHIPS! (No-DB Simulation)\n\nNama: $name\nOrder: $summary_str\nTotal: Rp " . number_format($total_price, 0, ',', '.');
-        $wa_url = "https://wa.me/6282265588823?text=" . urlencode($wa_msg);
-        header("Location: $wa_url");
+        header("Location: order.php");
         exit();
     }
-} else {
-    header("Location: order.php");
-    exit();
 }
 ?>

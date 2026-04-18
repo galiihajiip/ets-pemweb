@@ -1,14 +1,13 @@
 <?php
 /**
- * KOENCHIPS - Configuration & Database Connection (PDO)
- * Senior Web Developer & UI/UX Designer: Galih
+ * KOENCHIPS - Configuration (Synced with InfinityFree Live)
  */
 
-// Database Settings
-$host = "localhost";
-$db_name = "koenchips_db";
-$username = "root";
-$password = "";
+// Database Settings - LIVE PRODUCTION
+$host     = "sql107.infinityfree.com";
+$db_name  = "if0_41694674_koenchips";
+$username = "if0_41694674";
+$password = "Rqdutt86NuJqgtJ";
 
 try {
     // Establishing PDO Connection
@@ -16,7 +15,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
-    // Graceful error handling for UI preview when DB is not yet created
+    // Fallback for localhost preview
     $pdo = null;
     $db_error = $e->getMessage();
 }
@@ -25,7 +24,7 @@ try {
 $site_name = "KOENCHIPS";
 $tagline = "The Authentic Breadfruit Ripple";
 
-// Color Palette Variables (Shared with Tailwind & CSS)
+// Color Palette Variables
 $colors = [
     'army_dark' => '#2d3a1e',
     'army' => '#3d4e22',
