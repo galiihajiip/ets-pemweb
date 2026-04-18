@@ -1,0 +1,86 @@
+:root {
+    --army-green: #4a5c2a;
+    --dark-green: #3d4e22;
+    --light-green: #5a7032;
+    --gold: #d4a843;
+    --cream: #f5e6c8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-green);
+}
+
+h1, h2, h3, h4, h5, h6, .playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.btn-koen {
+    background-color: var(--army-green);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-koen:hover {
+    background-color: var(--dark-green);
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.bg-army {
+    background-color: var(--army-green);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold) !important;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Glassmorphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--army-green);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-green);
+}
