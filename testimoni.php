@@ -1,56 +1,68 @@
-<?php include 'includes/header.php'; ?>
+<?php 
+/**
+ * KOENCHIPS - Testimoni Lengkap
+ * Features BLOK 7.0: Masonry Grid 12 Items, Flavor Filtering JS
+ */
+include 'includes/header.php'; 
+?>
 
-<section class="bg-cream py-24 text-center">
-    <div class="container">
-        <h1 class="text-5xl playfair mb-4">Testimoni Sobat <span class="text-gold">Koen</span></h1>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto">Suara hati pelanggan kami dari seluruh penjuru Nusantara.</p>
+<!-- Header -->
+<section class="bg-cream py-32 text-center overflow-hidden">
+    <div class="container relative z-10" data-aos="zoom-out">
+        <h1 class="text-6xl md:text-8xl playfair mb-6">Suara <span class="text-gold italic">Sahabat</span></h1>
+        <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto">"Karena setiap kerenyahan memiliki ceritanya sendiri-sendiri."</p>
     </div>
 </section>
 
+<!-- Testimoni Grid -->
 <section class="section-padding bg-white">
     <div class="container">
-        <!-- Flavor Filter -->
-        <div class="flex flex-wrap justify-center gap-2 mb-12">
-            <button class="px-6 py-2 rounded-full font-bold transition-all bg-gold text-deepGreen testi-filter" data-filter="all">Semua</button>
-            <button class="px-6 py-2 rounded-full font-bold transition-all bg-cream hover:bg-gold testi-filter" data-filter="Chocolate">Chocolate</button>
-            <button class="px-6 py-2 rounded-full font-bold transition-all bg-cream hover:bg-gold testi-filter" data-filter="Matcha">Matcha</button>
-            <button class="px-6 py-2 rounded-full font-bold transition-all bg-cream hover:bg-gold testi-filter" data-filter="Vanilla">Vanilla</button>
-            <button class="px-6 py-2 rounded-full font-bold transition-all bg-cream hover:bg-gold testi-filter" data-filter="Taro">Taro</button>
+        
+        <!-- Flavor Filter Tags -->
+        <div class="flex flex-wrap justify-center gap-3 mb-16" data-aos="fade-up">
+            <button class="px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all bg-gold text-deepGreen testi-filter-btn" data-filter="all">Tampilkan Semua</button>
+            <button class="px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all bg-cream hover:bg-gold testi-filter-btn" data-filter="Chocolate">Chocolate</button>
+            <button class="px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all bg-cream hover:bg-gold testi-filter-btn" data-filter="Matcha">Matcha</button>
+            <button class="px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all bg-cream hover:bg-gold testi-filter-btn" data-filter="Vanilla">Vanilla</button>
+            <button class="px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all bg-cream hover:bg-gold testi-filter-btn" data-filter="Taro">Taro</button>
         </div>
 
-        <div class="row g-4" id="testi-grid">
+        <div class="row g-4" id="testi-masonry">
             <?php 
-            $testis = [
-                ['name'=>'Andini Putri', 'flavor'=>'Chocolate', 'rating'=>5, 'txt'=>'Cokelatnya premium banget, nggak kayak keripik biasa!'],
-                ['name'=>'Budi Santoso', 'flavor'=>'Taro', 'rating'=>5, 'txt'=>'Rasa taronya unik, gurih dan nagih banget.'],
-                ['name'=>'Siska Melani', 'flavor'=>'Matcha', 'rating'=>4, 'txt'=>'Seger rasa matchanya, cocok buat pecinta teh hijau.'],
-                ['name'=>'Dinda Ayu', 'flavor'=>'Vanilla', 'rating'=>5, 'txt'=>'Manis vanillanya pas, nggak bikin eneg.'],
-                ['name'=>'Rizky Pratama', 'flavor'=>'Chocolate', 'rating'=>5, 'txt'=>'Favorit anak-anak di rumah. Stoknya langsung habis!'],
-                ['name'=>'Maya Sari', 'flavor'=>'Vanilla', 'rating'=>4, 'txt'=>'Kerenyahannya luar biasa, tapi tetap empuk digigit.'],
-                ['name'=>'Andri Wijaya', 'flavor'=>'Taro', 'rating'=>5, 'txt'=>'Pas banget buat temen nonton bola.'],
-                ['name'=>'Hendra Kurniawan', 'flavor'=>'Matcha', 'rating'=>5, 'txt'=>'Rasa matchanya kerasa banget, nggak cuma pewarna.'],
-                ['name'=>'Saraswati', 'flavor'=>'Chocolate', 'rating'=>5, 'txt'=>'Bumbunya merata sampai ke kepingan terakhir.'],
-                ['name'=>'Bambang Tejo', 'flavor'=>'Taro', 'rating'=>4, 'txt'=>'Awalnya ragu, pas nyoba malah keterusan.'],
-                ['name'=>'Larasati', 'flavor'=>'Vanilla', 'rating'=>5, 'txt'=>'Packagingnya cantik, cocok buat kado ulang tahun.'],
-                ['name'=>'Dewi Lestari', 'flavor'=>'Chocolate', 'rating'=>5, 'txt'=>'Asli Sidoarjo, asli enak tenan Rek!'],
-            ];
-            foreach($testis as $t): 
+                $testis = [
+                    ['name'=>'Andini Putri', 'flavor'=>'Chocolate', 'rate'=>5, 'txt'=>'Jelas banget bedanya sama kerupuk biasa. Chocolate-nya melt di lidah!'],
+                    ['name'=>'Budi Santoso', 'flavor'=>'Taro', 'rate'=>5, 'txt'=>'Rasa taronya gurih abis, nggak pelit bumbu sama sekali.'],
+                    ['name'=>'Siska Melani', 'flavor'=>'Matcha', 'rate'=>4, 'txt'=>'Cocok buat temen nugas. Fresh dan ringan di tenggorokan.'],
+                    ['name'=>'Dinda Ayu', 'flavor'=>'Vanilla', 'rate'=>5, 'txt'=>'Ini kripik sukun paling wangi yang pernah saya beli.'],
+                    ['name'=>'Rizky Pratama', 'flavor'=>'Chocolate', 'rate'=>5, 'txt'=>'Baru sehari nyampe, satu toples langsung dicolong adek.'],
+                    ['name'=>'Maya Sari', 'flavor'=>'Vanilla', 'rate'=>4, 'txt'=>'Enak, tapi pengirimannya lumayan lama ke Kalimantan.'],
+                    ['name'=>'Andri Wijaya', 'flavor'=>'Taro', 'rate'=>5, 'txt'=>'Teksturnya pas, nggak keras tapi renyah kriuk poll.'],
+                    ['name'=>'Hendra Kurniawan', 'flavor'=>'Matcha', 'rate'=>5, 'txt'=>'Matcha sejauh ini varian terbaik bagi saya. Nagih!'],
+                    ['name'=>'Saraswati', 'flavor'=>'Chocolate', 'rate'=>5, 'txt'=>'Camilan paling asik pas diajak nonton drakor.'],
+                    ['name'=>'Bambang Tejo', 'flavor'=>'Taro', 'rate'=>4, 'txt'=>'Bagus, tolong diperbanyak stoknya di marketplace.'],
+                    ['name'=>'Larasati', 'flavor'=>'Vanilla', 'rate'=>5, 'txt'=>'Packingnya niat bgt, pake bubble tebel. Aman sampe Bali.'],
+                    ['name'=>'Dewi Lestari', 'flavor'=>'Chocolate', 'rate'=>5, 'txt'=>'Produk lokal tapi kualitas internasional.'],
+                ];
+                foreach($testis as $i => $t):
             ?>
-            <div class="col-md-6 col-lg-3 testi-card" data-flavor="<?php echo $t['flavor']; ?>">
-                <div class="bg-cream p-8 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col h-full">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-army rounded-full flex items-center justify-center text-white font-bold text-lg uppercase">
+            <div class="col-md-6 col-lg-3 testi-item" data-flavor="<?php echo $t['flavor']; ?>" data-aos="fade-up" data-aos-delay="<?php echo ($i%4)*100; ?>">
+                <div class="bg-cream p-10 rounded-[3.5rem] shadow-sm hover-scale flex flex-col h-full border border-gold/5 border-b-[8px] border-gold">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-14 h-14 bg-army text-white flex items-center justify-center rounded-full font-black text-xl shadow-lg border-4 border-white">
                             <?php echo substr($t['name'], 0, 1); ?>
                         </div>
                         <div>
-                            <h6 class="mb-0 font-bold"><?php echo $t['name']; ?></h6>
-                            <small class="text-[10px] text-gray-500 uppercase font-black">Beli: <?php echo $t['flavor']; ?></small>
+                            <h6 class="font-bold mb-0 text-darkGreen"><?php echo $t['name']; ?></h6>
+                            <p class="text-[9px] font-black uppercase tracking-widest text-gold mt-1">Varian: <?php echo $t['flavor']; ?></p>
                         </div>
                     </div>
-                    <div class="flex text-gold text-xs mb-4">
-                        <?php for($i=0; $i<$t['rating']; $i++) echo '★'; ?>
+                    <div class="flex text-gold text-[10px] space-x-1 mb-6">
+                        <?php for($j=0; $j<5; $j++) echo $j<$t['rate']?'★':'☆'; ?>
                     </div>
-                    <p class="italic text-gray-700 text-sm leading-relaxed flex-grow">"<?php echo $t['txt']; ?>"</p>
+                    <p class="italic text-gray-500 text-sm leading-relaxed flex-grow">"<?php echo $t['txt']; ?>"</p>
+                    <div class="mt-8 pt-6 border-t border-gold/10 text-end opacity-20">
+                        <i class="bi bi-patch-check-fill text-xl"></i>
+                    </div>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -59,23 +71,23 @@
 </section>
 
 <script>
-document.querySelectorAll('.testi-filter').forEach(btn => {
+document.querySelectorAll('.testi-filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        // UI
-        document.querySelectorAll('.testi-filter').forEach(b => {
-            b.classList.remove('bg-gold', 'text-deepGreen');
-            b.classList.add('bg-cream');
+        // UI State
+        document.querySelectorAll('.testi-filter-btn').forEach(b => {
+             b.classList.remove('bg-gold', 'text-deepGreen');
+             b.classList.add('bg-cream');
         });
-        btn.classList.remove('bg-cream');
         btn.classList.add('bg-gold', 'text-deepGreen');
+        btn.classList.remove('bg-cream');
 
         const filter = btn.getAttribute('data-filter');
-        document.querySelectorAll('.testi-card').forEach(card => {
-            if(filter === 'all' || card.getAttribute('data-flavor') === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+        document.querySelectorAll('.testi-item').forEach(item => {
+             if(filter==='all' || item.getAttribute('data-flavor')===filter) {
+                 item.style.display = 'block';
+             } else {
+                 item.style.display = 'none';
+             }
         });
     });
 });
