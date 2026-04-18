@@ -12,8 +12,8 @@
             <h1 class="text-5xl md:text-7xl playfair mb-4 leading-tight">Rasakan Kerenyahan <span class="text-gold italic">Sukun</span> yang Sesungguhnya</h1>
             <p class="text-lg md:text-xl mb-8 opacity-90 font-light">KOENCHIPS menghadirkan camilan sehat bergizi dengan rasa tradisional yang dikemas modern untuk menemani hari-harimu.</p>
             <div class="flex space-x-4">
-                <a href="shop.php" class="bg-gold hover:bg-white text-darkGreen px-8 py-3 rounded-full font-bold transition-all no-underline shadow-lg">Lihat Produk</a>
-                <a href="about.php" class="border-2 border-white hover:bg-white hover:text-darkGreen px-8 py-3 rounded-full font-bold transition-all no-underline">Kenali Kami</a>
+                <a href="katalog.php" class="bg-gold hover:bg-white text-darkGreen px-8 py-3 rounded-full font-bold transition-all no-underline shadow-lg">Lihat Produk</a>
+                <a href="tentang.php" class="border-2 border-white hover:bg-white hover:text-darkGreen px-8 py-3 rounded-full font-bold transition-all no-underline">Kenali Kami</a>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
                     </div>
                     <h3 class="playfair text-2xl mb-2">Original Sea Salt</h3>
                     <p class="text-gray-600 mb-4">Kemurnian rasa sukun dengan sentuhan garam laut pilihan.</p>
-                    <a href="shop.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
+                    <a href="katalog.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
                 </div>
             </div>
             <!-- Pedas -->
@@ -48,7 +48,7 @@
                     </div>
                     <h3 class="playfair text-2xl mb-2">Pedas Daun Jeruk</h3>
                     <p class="text-gray-600 mb-4">Sensasi pedas yang berpadu dengan aroma segar daun jeruk.</p>
-                    <a href="shop.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
+                    <a href="katalog.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
                 </div>
             </div>
             <!-- Manis -->
@@ -59,7 +59,7 @@
                     </div>
                     <h3 class="playfair text-2xl mb-2">Caramel Glaze</h3>
                     <p class="text-gray-600 mb-4">Balutan karamel manis yang melapisi tiap kepingan renyah.</p>
-                    <a href="shop.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
+                    <a href="katalog.php" class="text-army font-bold no-underline hover:text-gold">Detail Produk &rarr;</a>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                         <p class="mb-0">Halal & Higienis</p>
                     </div>
                 </div>
-                <a href="about.php" class="btn-koen inline-block px-10 py-3 rounded-full no-underline uppercase tracking-wider font-bold text-sm">Baca Selengkapnya</a>
+                <a href="tentang.php" class="btn-koen inline-block px-10 py-3 rounded-full no-underline uppercase tracking-wider font-bold text-sm">Baca Selengkapnya</a>
             </div>
         </div>
     </div>
@@ -165,7 +165,7 @@
         <div class="relative z-10 w-full max-w-3xl mx-auto">
             <h2 class="text-white playfair text-4xl md:text-5xl mb-6">Siap Menanamkan Kerenyahan di Harimu?</h2>
             <p class="text-cream/80 text-lg mb-10">Dapatkan diskon 15% untuk pembelian pertama Anda melalui website. Klik tombol di bawah ini!</p>
-            <a href="contact.php" class="bg-gold text-darkGreen px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all no-underline inline-block">Order via WhatsApp</a>
+            <a href="kontak.php" class="bg-gold text-darkGreen px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all no-underline inline-block">Order via WhatsApp</a>
         </div>
     </div>
 </section>
